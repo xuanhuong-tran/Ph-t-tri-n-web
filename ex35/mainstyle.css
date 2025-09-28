@@ -1,6 +1,6 @@
 
 body{
-  background-image: url('../ex34/camel.gif');
+  background-image: url('camel.gif');
   background-position: right bottom;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -27,3 +27,4 @@ a:hover{
   color: red;
   background-color: #ccffcc;
 }
+
