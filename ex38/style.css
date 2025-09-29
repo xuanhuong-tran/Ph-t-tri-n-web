@@ -1,0 +1,32 @@
+p {
+  width: 45%;
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00F;
+}
+
+#spring {
+  background-color: pink;
+  color: purple;
+}
+
+#summer {
+  background-color: orange;
+  color: brown;
+}
+
+#autumn {
+  background-color: yellow;
+  color: darkorange;
+}
+
+#winter {
+  background-color: lightgray;
+  color: navy;
+}
