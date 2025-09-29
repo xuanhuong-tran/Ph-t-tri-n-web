@@ -3,9 +3,10 @@ p {
   margin-top: 10px;
   margin-left: 10px;
   float: left;
+  padding: 8px;
 }
 
-.title {
+p span {
   font-size: 18px;
   font-weight: bold;
   color: #00F;
@@ -13,20 +14,20 @@ p {
 
 #spring {
   background-color: pink;
-  color: purple;
+  color: rgb(3, 3, 3);
 }
 
 #summer {
   background-color: orange;
-  color: brown;
+  color: rgb(3, 3, 3);
 }
 
 #autumn {
   background-color: yellow;
-  color: darkorange;
+  color: rgb(3, 3, 3);
 }
 
 #winter {
   background-color: lightgray;
-  color: navy;
+  color: rgb(3, 3, 3);  
 }
