@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Maxwell Scientific - Astronomy</title>
+<style>
+  :root{
+    --olive:#b8860b;
+    --green:#3a7b42;
+    --link:#1a4ed8;
+    --side-bg:#f6f2bf;
+    --side-bd:#bfb98a;
+    --quote:#dcdcdc;
+    --quote2:#e8e8e8;
+    --hr:#bdbdbd;
+    --red:#b50000;
+    --maxw:760px;
+  }
+  body{font-family:Arial,Helvetica,sans-serif; margin:0; color:#333;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:12px 14px 40px}
+  .top{text-align:center; margin-top:8px}
+  .nav a{color:var(--link); margin:0 6px; text-decoration:underline; font-size:14px}
+  h1{color:var(--olive); margin:.4em 0 .2em; font-size:28px}
+  .intro{color:var(--green); line-height:1.4; margin:.3em 0 1em; font-size:14px}
+  .cols{display:flex; gap:18px; align-items:flex-start}
+  .main{flex:1; min-width:0}
+  .side{
+    width:260px;
+    background:var(--side-bg);
+    border:1px solid var(--side-bd);
+    padding:12px;
+    margin-top:10px; 
+  }
+  h2{font-size:18px; margin:14px 0 8px}
+
+  .prolist{
+    list-style-image:url('Apple.jpg');
+    padding-left:28px;
+    margin:8px 0 18px;
+  }
+  .prolist li{margin:8px 0; font-size:14px; line-height:1.4}
+  .prolist b{color:var(--red)}
+  .side h3{margin:0 0 6px; font-size:16px}
+  .side p{font-size:13px; line-height:1.4; margin:.5em 0}
+  .side img{width:100%; display:block; margin:8px 0}
+  .quotes h2{margin:10px 0 6px}
+  .quote{background:var(--quote); padding:10px; margin:0 0 6px; font-size:14px}
+  .quote:nth-child(odd){background:var(--quote2)}
+  hr{border:none; border-top:1px solid var(--hr); margin:22px 0}
+  .footer{color:var(--green); font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <img src="images/MWSLogo.gif" alt="Maxwell Scientific logo">
+      <div class="nav">
+        <a href="#">Astronomy</a> | <a href="#">Chemistry</a> |
+        <a href="#">Electronics</a> | <a href="#">Engineering</a> |
+        <a href="#">Physics</a>
+      </div>
+    </div>
+
+    <h1>Astronomy</h1>
+    <p class="intro">
+      Maxwell Scientific provides a wide range of astronomical products - perfect for classroom
+      demonstrations and projects. Choose from the finest equipment from Newton.<sup>TM</sup>
+      DC Optics,<sup>TM</sup> and StarVision.<sup>TM</sup>
+    </p>
+
+    <div class="cols">
+      <main class="main">
+        <h2>Featured Astronomical Products</h2>
+        <ul class="prolist">
+          <li><b>Refractor Kit:</b> March Special! Learn about optics... Price $10.95. Stock Number: RK01-085</li>
+          <li><b>NightDisk:</b> View the night sky... Price $1.95. Stock Number: ND25-100</li>
+          <li><b>Constellation Globe:</b> Beautiful two-way globe... Price $49.95. Stock Number: CG1-310</li>
+          <li><b>Star and Planet Locators:</b> A pack of six locators... Price $12.95. Stock Number: SPL25-471</li>
+          <li><b>Rechargeable Red Flashlight:</b> 4" rechargeable flashlight... Price $12.95. Stock Number: RF02-214</li>
+          <li><b>Classroom Planetarium:</b> March Special! Planetarium kit... Price $39.95. Stock Number: CP1-893</li>
+          <li><b>Planisphere:</b> Device for identifying constellations... Price $3.95. Stock Number: PL-190</li>
+          <li><b>Solar Mobile Kit:</b> Includes 12 mylar spheres... Price $22.95. Stock Number: SM5-411</li>
+        </ul>
+
+        <section class="quotes">
+          <h2>Comments From Our Astronomy Customers</h2>
+          <div class="quote">“The view of Saturn’s rings through the Newton refractor is fantastic...” – Davis Halbert, San Jose, CA</div>
+          <div class="quote">“I appreciate the prompt delivery of the six-pack of star disks...” – Gerald Noel, Washington, D.C.</div>
+          <div class="quote">“The solar mobile we ordered arrived as promised...” – Brenda Dicks, Greely, CO</div>
+        </section>
+
+        <hr>
+        <footer class="footer">
+          <strong>Maxwell Scientific</strong><br>
+          205 East Homanline Drive, Hayton, IL 45129<br>
+          Phone: (800) 555-2191 Fax: (812) 555-2192
+        </footer>
+      </main>
+
+      <aside class="side">
+        <h3>Run the Messier Marathon</h3>
+        <p>It’s time for the annual <b>Messier Marathon</b>... attempt to see all 110 Messier objects in one night!</p>
+        <img src="images/m20.jpg" alt="Messier object">
+        <p><b>Messier objects</b> are stellar objects classified by Charles Messier in the 18th century. His catalog contains galaxies, nebulae, and star clusters.</p>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
