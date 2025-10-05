@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Change Image - Xuân Hương</title>
+    <script>
+        function hide_image(){
+            document.getElementById("avatar").style.display = "none";
+        }
+        function show_image(){
+            document.getElementById("avatar").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type = "radio" name = "image"  id = "img1" onchange="show_image()" />
+        <label for = "img1">Show image</label>
+        <br/>
+        <input type ="radio" name = "image"  id = "img2" onchange="hide_image()" />
+        <label for = "img2">Hide image</label>
+        <br/>
+        <img src="../image/Cassini.jpg" name="avatar" id = "avatar" style="display:block;" >
+    </form>
+</body>
+</html>

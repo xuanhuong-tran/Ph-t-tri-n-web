@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script>
+        function save_contact(){
+            name = mycontact.name.value
+            email = mycontact.email
+            gender =mycontact.gender.checked==true?"woman":"man"
+            alert("Name: " + name)
+            alert("Email: " + email)
+            alert("Gender"+gender)
+            //alert("Name: " + name)
+            //alert("Email: " + email)
+            //alert("gender"+gender)
+            table_output=document.getElementById("table_output")
+            row ="<tr><td>"+name+"</td><td>"+email+"</td><td>"+gender+"</td></tr>"
+            if(gender =="Woman")
+            row ="<tr style = 'background-color:pink'><td>"+name+"</td><td>"+email+"</td><td>"+gender+"</td></tr>"
+        }
+    </script>
+</head>
+<body>
+    <form name = "mycontact">
+        <table id ="table_input">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" id="name" /></td>
+                </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" id="email" /></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="checkbox" value = "woman" name = "gender" id ="gender"/>
+                    <label for ="gender"> Is woman</label>
+                    <br/>
+                </td>
+                </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <button type ="button" onclick="save_contact()">On click</button>
+                    <button type = "reset">Clear</button>
+                </td>
+        </table>
+        <table id = "table_output" border = "1">
+            <caption>List of people</caption>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                </tr>
+             <tbody id = "table_output_tbody"></tbody>
+        </table>
+    </form>
+</body>
+</html>
