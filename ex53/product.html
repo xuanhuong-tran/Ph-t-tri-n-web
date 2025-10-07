@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title> Ex53 - Trần Xuân Hương </title>
+  <style>
+    body{font-family:Arial, sans-serif;background:#fafafa}
+    form{width:640px;margin:24px auto;background:#fff;border:1px solid #b8c1cc;border-radius:6px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #d0d7de;padding:8px}
+    th{background:#f3f4f6;text-align:center}
+    td:nth-child(1),td:nth-child(2){text-align:left}
+    .qty,.itemTotal,.grand{width:110px;text-align:right}
+    .footer{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:10px;border-top:1px solid #d0d7de}
+    .sum-btn{background:#f2a100;border:none;color:#fff;padding:8px 18px;border-radius:4px;font-weight:700;cursor:pointer}
+    .sum-btn:hover{background:#da9000}
+    .total-label{font-weight:bold}
+  </style>
+  <script>
+    // chỉ để hiển thị xem trước Item table + Total trên trang nhập
+    document.addEventListener('DOMContentLoaded', () => {
+      const PRICES = [19.95, 29.95, 39.95];
+      const qtyEls   = [1,2,3].map(i => document.getElementById('qty'+i));
+      const itemEls  = [1,2,3].map(i => document.getElementById('item'+i));
+      const grandEl  = document.getElementById('grand');
+
+      function recalc(){
+        let sum = 0;
+        for(let i=0;i<3;i++){
+          const q = parseInt(qtyEls[i].value || '0',10);
+          const line = q * PRICES[i];
+          itemEls[i].value = line ? line.toFixed(2) + '$' : '';
+          sum += line;
+        }
+        grandEl.value = sum ? sum.toFixed(2) + '$' : '';
+      }
+      qtyEls.forEach(el => el.addEventListener('input', recalc));
+    });
+  </script>
+</head>
+<body>
+  <form action="sum.html" method="get">
+    <table>
+      <tr>
+        <th>Part Number</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Item table</th>
+      </tr>
+      <tr>
+        <td>C112</td>
+        <td>Mouse</td>
+        <td>19.95$</td>
+        <td><input class="qty"  type="number" id="qty1" name="qty1" min="0" step="1" /></td>
+        <td><input class="itemTotal" type="text" id="item1" name="item1" readonly /></td>
+      </tr>
+      <tr>
+        <td>B124</td>
+        <td>Keyboard US</td>
+        <td>29.95$</td>
+        <td><input class="qty"  type="number" id="qty2" name="qty2" min="0" step="1" /></td>
+        <td><input class="itemTotal" type="text" id="item2" name="item2" readonly /></td>
+      </tr>
+      <tr>
+        <td>U125</td>
+        <td>USB KingMax</td>
+        <td>39.95$</td>
+        <td><input class="qty"  type="number" id="qty3" name="qty3" min="0" step="1" /></td>
+        <td><input class="itemTotal" type="text" id="item3" name="item3" readonly /></td>
+      </tr>
+    </table>
+
+    <div class="footer">
+      <span class="total-label">Total:</span>
+      <input class="grand" type="text" id="grand" name="grand" readonly />
+      <input class="sum-btn" type="submit" value="Sum" />
+    </div>
+  </form>
+</body>
+</html>

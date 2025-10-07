@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Summary</title>
+  <style>
+    body{font-family:Arial, sans-serif;background:#f0f8ff;padding:20px}
+    h2{color:#0b4f8a;margin-bottom:8px}
+    .actions{margin:10px 0 18px 0;display:flex;gap:10px}
+    button,.link{background:#eee;border:1px solid #bbb;padding:6px 12px;border-radius:4px;cursor:pointer}
+    button:hover{background:#e3e3e3}
+    table{border-collapse:collapse;width:680px;background:#fff}
+    th,td{border:1px solid #9fb4c7;padding:8px;text-align:center}
+    th{background:#e7eef6}
+    td:first-child,td:nth-child(2){text-align:left}
+    .right{text-align:right}
+  </style>
+</head>
+<body>
+  <h2>Product Summary (accumulated via GET)</h2>
+  <div class="actions">
+    <a class="link" href="product.html">← Add more items</a>
+    <button id="clear">Clear accumulated data</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Part Number</th>
+        <th>Description</th>
+        <th>Unit Price</th>
+        <th>Accumulated Qty</th>
+        <th>Item table</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="right"><b>Grand Total:</b></td>
+        <td id="grand" class="right"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+
+    const PRODUCTS = [
+      { code:'C112', name:'Mouse',       price:19.95 },
+      { code:'B124', name:'Keyboard US', price:29.95 },
+      { code:'U125', name:'USB KingMax', price:39.95 }
+    ];
+
+    const p = new URLSearchParams(window.location.search);
+    const addQty = [
+      parseInt(p.get('qty1') || '0', 10),
+      parseInt(p.get('qty2') || '0', 10),
+      parseInt(p.get('qty3') || '0', 10),
+    ];
+
+    const KEY = 'accum_cart_v1';
+    let cart = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if(!cart){
+      cart = { C112:0, B124:0, U125:0 };
+    }
+
+    PRODUCTS.forEach((prod, i) => {
+      const q = addQty[i] || 0;
+      if(q > 0){
+        cart[prod.code] = (cart[prod.code] || 0) + q;
+      }
+    });
+
+    localStorage.setItem(KEY, JSON.stringify(cart));
+
+    const tbody = document.getElementById('rows');
+    let grand = 0;
+    PRODUCTS.forEach(prod => {
+      const qty = cart[prod.code] || 0;
+      const itemTotal = qty * prod.price;
+      grand += itemTotal;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${prod.code}</td>
+        <td>${prod.name}</td>
+        <td class="right">${prod.price.toFixed(2)}$</td>
+        <td class="right">${qty}</td>
+        <td class="right">${itemTotal ? itemTotal.toFixed(2) + '$' : ''}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+    document.getElementById('grand').textContent = grand ? grand.toFixed(2) + '$' : '';
+
+    // nút xóa tích lũy
+    document.getElementById('clear').addEventListener('click', () => {
+      localStorage.removeItem(KEY);
+      location.reload();
+    });
+  </script>
+</body>
+</html>
