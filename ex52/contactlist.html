@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Message Received</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f8ff; padding: 20px; }
+    h2 { color: #004080; }
+    p { font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Message Details (Received via GET)</h2>
+  <p><b>Full name:</b> <span id="fullname"></span></p>
+  <p><b>Email:</b> <span id="email"></span></p>
+  <p><b>Title:</b> <span id="title"></span></p>
+  <p><b>Send to:</b> <span id="sendto"></span></p>
+  <p><b>Content:</b></p>
+  <pre id="content" style="white-space: pre-wrap; background:#fff; padding:10px; border:1px solid #ccc;"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("fullname").textContent = params.get("fullname");
+    document.getElementById("email").textContent = params.get("email");
+    document.getElementById("title").textContent = params.get("title");
+    document.getElementById("sendto").textContent = params.get("sendto");
+    document.getElementById("content").textContent = params.get("content");
+  </script>
+</body>
+</html>
