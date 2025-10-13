@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script type="text/javascript">
+        var p_item=
+        {
+            id:"P01",
+            Name:"Bannana",
+            Price: 100,
+            Quantity: 20,
+            Image:"coca.jpg"
+        }
+    </script>
+</head>
+<body>
+    <form name = "my_form">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td id="td_price"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id="td_name"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td id="td_price"></td>
+                </tr>
+            <tr>
+                <td>Quantity</td>
+                <td id="td_quantity"></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td id="td_image">
+                    <img id="img_product"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script type ="text/javascript">
+        td_id.innerText=p_item.id
+        td_name.innerText=p_item.Name
+        td_price.innerText=p_item.Price
+        td_quantity.innerText=p_item.Quantity
+        img_product.src=p_item.Image
+    </script>
+        
+</body>
+</html>

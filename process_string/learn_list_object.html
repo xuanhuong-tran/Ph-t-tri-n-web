@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script type = "text/javascript">
+        var arr_product=[
+        {Id:"P01", Name:"Bannana", Quantity: 20},
+        {Id:"P02", Name:"Apple", Quantity: 30},
+        {Id:"P03", Name:"Orange", Quantity: 25},
+        ]
+    </script>
+</head>
+<body>
+    <table border ="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody id = "my_tbody">
+        </tbody>
+        <script type ="text/javascript">
+            my_tbody.innerHTML=""
+            for(i=0;i<arr_product.length;i++)
+            {
+                item=arr_product[i]
+                row="<tr>" +
+                "<td>" + item.Id + "</td>" +
+                "<td>" + item.Name + "</td>" +
+                "<td>" + item.Quantity + "</td>" +
+                "</tr>"
+                my_tbody.innerHTML+=row
+            }
+        </script>
+            
+
+    </table>
+</body>
+</html>

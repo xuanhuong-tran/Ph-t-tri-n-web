@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script>
+        function process_optimization()
+        {
+            name_output.innerText=my_form.name_input.value
+        let originalText = my_form.name_input.value;
+        let capitalizedText = originalText.toLowerCase().split(' ').map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(' ');
+        
+        name_output.innerText = capitalizedText;
+        }
+    </script>
+</head>
+<body>
+    <form name = "my_form">
+        <table>
+            <tr>
+                <td>Input:</td>
+                <td> <input type = "text" name = "name_input" id ="name_input" oninput="process_optimization()"/> </td>
+            </tr>
+            <tr>
+                <td> Output:</td>
+                <td id="name_output"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

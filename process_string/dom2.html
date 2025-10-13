@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    <form name="my_form">
+        <fieldset>
+            <legend>
+                Customer Information:
+                <table>
+                    <tr>
+                        <td>Customer Name:</td>
+                        <td>
+                            <input type = "number" name ="customer_name" id="customer_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Customer Age:</td>
+                        <td>
+                            <input type = "number" name ="customer_Age" id="customer_Age"/>
+                        </td>
+                    </tr>
+                </table>
+            </legend>
+        </fieldset>
+    </form>
+    <table border = "1">
+        <thead>
+            <tr>
+            <th>Customer Name:</th>
+            <th>Customer Age:</th>
+            </tr>
+        </thead>
+        <tbody id ="customer_tbody">
+
+        </tbody>
+    </table>
+   <script>
+    function process_save_customer()
+    {
+        customer_tbody=document.getElementById()
+        td_name=customer.createElement("td")
+        tr_name.innerText=my_form.customer_name.value
+        tr.appendChild(td_name)
+        td_age=document.createElement("td")
+        td_age.innerText=my.form.customer_age.value
+        tr.appendChild(td_age)
+    }
+   </script>
+</body>
+</html>
